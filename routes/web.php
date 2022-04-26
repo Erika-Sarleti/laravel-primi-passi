@@ -14,8 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('hello-world');
+    $params = [
+        'title' => 'Hello World: Supreme Project!'
+    ];
+    return view('hello-world', $params);
 });
-Route::get('/welcome', function (){
-    return view('welcome');
-});
+Route::get('/why-supreme', function (){
+    return view('supreme');
+})->name('supreme');
+
+Route::get('/project', function(){
+    return view('project');
+})->name('project');
+
+Route::get('/font', function(){
+    return view('font');
+})->name('font');
